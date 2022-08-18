@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/areyousuretext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you Sure ?"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/_10sdp"
+        />
+
+    <EditText
+        android:id="@+id/deletedialog_userid_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/areyousuretext"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/edittext_theme"
+        android:hint="Email"
+        android:paddingStart="@dimen/_5sdp"
+        android:maxLength="30"
+        android:textCursorDrawable="@drawable/cursor_theme"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="@dimen/_5sdp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/deletedialog_password_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/edittext_theme"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:maxLength="8"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/cursor_theme"
+        android:drawableStart="@drawable/lock"
+        android:drawablePadding="@dimen/_5sdp"
+        android:paddingStart="@dimen/_5sdp"
+        android:layout_below="@id/deletedialog_userid_text"/>
+    <TextView
+        android:id="@+id/yestext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/maincolor"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/deletedialog_password_edittext"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/_10sdp"/>
+    <TextView
+        android:id="@+id/notext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/maincolor"
+        android:textSize="@dimen/_20sdp"
+        android:layout_below="@id/deletedialog_password_edittext"
+        android:layout_toLeftOf="@id/yestext"
+        android:layout_marginRight="@dimen/_10sdp"/>
+
+</RelativeLayout>

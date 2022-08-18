@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerpage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/register_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="@dimen/_40sdp"
+                android:textColor="@color/maincolor"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_40sdp"
+                />
+
+            <EditText
+                android:id="@+id/register_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Name"
+                android:layout_below="@id/register_text"
+                android:background="@drawable/edittext_theme"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textCursorDrawable="@drawable/cursor_theme"
+                android:drawablePadding="@dimen/_5sdp"
+                android:drawableStart="@drawable/person"
+                android:maxLength="30"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"/>
+
+            <EditText
+                android:id="@+id/register_email_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Email"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/register_name_edittext"
+                android:background="@drawable/edittext_theme"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="@dimen/_5sdp"
+                android:textCursorDrawable="@drawable/cursor_theme"
+                android:maxLength="30"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:id="@+id/register_password_edittext"
+                android:hint="Password"
+                android:layout_below="@id/register_email_edittext"
+                android:background="@drawable/edittext_theme"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/lock"
+                android:textCursorDrawable="@drawable/cursor_theme"
+                android:drawablePadding="@dimen/_5sdp"
+                android:maxLength="8"
+                />
+
+            <Button
+                android:id="@+id/register_registerbutton_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@id/register_password_edittext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/custom_button"
+                android:text="Register"
+                android:textCursorDrawable="@drawable/cursor_theme"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/register_backto_text"
+                android:text="Back to Login"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/maincolor"
+                android:textStyle="bold"
+                android:layout_below="@id/register_registerbutton_button"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

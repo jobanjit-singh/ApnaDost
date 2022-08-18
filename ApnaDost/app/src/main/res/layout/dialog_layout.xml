@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp">
+    <RelativeLayout
+        android:id="@+id/userprofile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_5sdp">
+        <ImageView
+            android:id="@+id/dialog_account_button"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/account_maincolor" />
+
+        <TextView
+            android:id="@+id/dialog_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/dialog_account_button"
+            android:background="@drawable/dialogusername_design"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:maxLines="1"
+            android:padding="@dimen/_5sdp"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dialog_signout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:layout_below="@id/userprofile_layout"
+        android:gravity="center"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:background="@drawable/dialog_design"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/dialog_deleteaccount_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Account"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:layout_below="@id/dialog_signout_button"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:background="@drawable/dialog_design"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        />
+
+</RelativeLayout>
