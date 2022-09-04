@@ -3,6 +3,7 @@ package com.example.apnadost;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -68,6 +69,11 @@ public class registerpage extends AppCompatActivity {
             }
 
             private void register() {
+                Dialog loadingdialog = new Dialog(registerpage.this);
+                loadingdialog.setContentView(R.layout.loading_dialog);
+                loadingdialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_background);
+                loadingdialog.show();
+                loadingdialog.setCancelable(true);
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(register_email.getText().toString(),register_pass.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
@@ -80,15 +86,18 @@ public class registerpage extends AppCompatActivity {
                                 if(task.isComplete()) {
                                     startActivity(new Intent(registerpage.this, MainActivity.class));
                                     finish();
+                                    loadingdialog.dismiss();
                                 }
                                 else{
                                     Toast.makeText(registerpage.this, "Error", Toast.LENGTH_SHORT).show();
+                                    loadingdialog.dismiss();
                                 }
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(registerpage.this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                loadingdialog.dismiss();
                             }
                         });
                     }
@@ -96,6 +105,7 @@ public class registerpage extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(registerpage.this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        loadingdialog.dismiss();
                     }
                 });
             }

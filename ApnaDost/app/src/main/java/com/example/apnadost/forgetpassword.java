@@ -3,6 +3,7 @@ package com.example.apnadost;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -53,17 +54,24 @@ public class forgetpassword extends AppCompatActivity {
             }
 
             private void resetpass() {
+                Dialog loadingdialog = new Dialog(forgetpassword.this);
+                loadingdialog.setContentView(R.layout.loading_dialog);
+                loadingdialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_background);
+                loadingdialog.show();
+                loadingdialog.setCancelable(true);
                 FirebaseAuth.getInstance().sendPasswordResetEmail(forgetemail.getText().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(forgetpassword.this, "Check Your Email", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(forgetpassword.this,loginpage.class));
                         finish();
+                        loadingdialog.dismiss();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(forgetpassword.this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        loadingdialog.dismiss();
                     }
                 });
             }

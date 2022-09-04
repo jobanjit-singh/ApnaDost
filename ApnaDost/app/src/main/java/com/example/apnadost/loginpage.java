@@ -3,6 +3,7 @@ package com.example.apnadost;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -69,16 +70,23 @@ public class loginpage extends AppCompatActivity {
             }
 
             private void login() {
+                Dialog loadingdialog = new Dialog(loginpage.this);
+                loadingdialog.setContentView(R.layout.loading_dialog);
+                loadingdialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_background);
+                loadingdialog.show();
+                loadingdialog.setCancelable(true);
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(loginemail.getText().toString(),loginpass.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         startActivity(new Intent(loginpage.this,MainActivity.class));
                         finish();
+                        loadingdialog.dismiss();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(loginpage.this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        loadingdialog.dismiss();
                     }
                 });
             }

@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/dialogusername_design.xml" value="0.151" />
         <entry key="app/src/main/res/drawable/edittext_theme.xml" value="0.1335" />
         <entry key="app/src/main/res/drawable/post_edittext_theme.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/postviewback.xml" value="0.174" />
         <entry key="app/src/main/res/layout/activity_forgetpassword.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_loginpage.xml" value="0.22" />
@@ -23,6 +24,8 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/dialog_deleteaccount.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/dialog_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/loading_dialog.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/postview.xml" value="0.359375" />
       </map>
     </option>
   </component>
